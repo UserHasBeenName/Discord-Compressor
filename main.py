@@ -1,6 +1,3 @@
-# Note: 'pip install ffmpeg' does not work for ffmpeg.probe, use 'pip install ffmpeg-python' instead.
-# YO IM A NEW LINE
-
 import ffmpeg
 
 from tkinter import filedialog as fd
@@ -76,10 +73,11 @@ def save_main_folder():
 
 
 def compress():
+    # Code mainly borrowed from from https://stackoverflow.com/questions/64430805/how-to-compress-video-to-target-size-by-python/64439347#64439347
 
     probe = ffmpeg.probe(file_input)
 
-    # Minimum requirements TO BE ADJUSTED
+    # Minimum requirements
     total_bitrate_lower_bound = 10000
     min_audio_bitrate = 20000
     max_audio_bitrate = 256000
